@@ -1,21 +1,14 @@
-body {
-  background-image: url("/background.jpeg");
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-  }
-  
-  @media only screen and (max-width: 767px) {
-    body {
-       background-image: url("/background.jpeg");
-    }
-  }    
 
-  .btn-circle-lg {
-    width: 55px;
-    height: 55px;
-    line-height: 55px;
-    font-size: 1.1rem;
-  }
+body { 
+  background: url("/background.jpeg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
 

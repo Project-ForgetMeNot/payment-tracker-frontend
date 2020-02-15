@@ -12,5 +12,32 @@ code {
     monospace;
 }
 
+#header
+{
+ text-align: center;
+ height: 100px;
+}
 
+#logo h1 /*forget me not title*/
+{
+  display: inline-block;
+  letter-spacing: 0.1em;
+	font-size: 2.5em;
+	font-weight: 700;
+	color: #2C383B;
+	padding-right: 0.50em;
+	border-right: 1px solid rgba(0,0,0,.3);
+	
+}
+
+#logo span /*bill reminder app heading*/
+{
+  position: relative;
+  top: -7px;
+	padding-left: 1.50em;
+	letter-spacing: 0.1em;
+  font-size: 1em;
+  color: #2C383B;
+  
+}
 

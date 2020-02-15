@@ -1,4 +1,3 @@
-
 body { 
   background: url("/background.jpg"); 
 background-position: center center;
@@ -23,7 +22,8 @@ background-size: cover;
 	color: #2C383B;
 	padding-right: 0.50em;
 	border-right: 1px solid rgba(0,0,0,.3);
-	font-family: "Poiret One", cursive;
+  font-family: "Poiret One", cursive;
+  margin-top: 30px;
 }
 
 #logo span /*bill reminder app heading*/
@@ -38,3 +38,12 @@ background-size: cover;
  
 }
 
+.btn-circle-lg {
+  width: 75px;
+  height: 75px;
+  padding: 7px 10px;
+  border-radius: 40px;
+  font-size: 2em;
+  background-color: yellow;
+ 
+}

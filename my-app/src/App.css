@@ -39,6 +39,7 @@
     float: none;
     display: block;
     text-align: left;
+    top: 30px;
   }
   .header-right {
     float: none;
@@ -49,7 +50,20 @@
   .logo span {
     float: none;
     display: block;
-    text-align: left;
+    text-align: center;
+    top: 30px;
+  }
+  .header-right {
+    float: none;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .btn-circle-lg {
+    float: none;
+    display: block;
+    text-align: center;
+    top: 30px;
   }
   .header-right {
     float: none;

@@ -11,6 +11,7 @@ background-size: cover;
 {
  text-align: center;
  height: 100px;
+ margin-bottom: 30px;
 }
 
 #logo h1 /*forget me not title*/
@@ -28,7 +29,7 @@ background-size: cover;
 
 #logo span /*bill reminder app heading*/
 {
-  position: relative;
+ 
   top: -7px;
 	padding-left: 1.50em;
 	letter-spacing: 0.1em;
@@ -38,12 +39,37 @@ background-size: cover;
  
 }
 
-.btn-circle-lg {
-  width: 75px;
-  height: 75px;
-  padding: 7px 10px;
+.btn-circle {
+  text-align: center;
+  display: inline-block;
+  width: 55px;
+  height: 55px;
   border-radius: 40px;
-  font-size: 2em;
-  background-color: yellow;
- 
+  font-size: 1.4em;
+  background-color: #FFD700;
+  border-color: #DAA520;
+}
+
+.car:hover {
+  display: inline-block;
+}
+
+.house:hover{
+  display: inline-block;
+}
+
+.insurance:hover{
+  display: inline-block;
+}
+
+.phone:hover{
+  display: inline-block;
+}
+
+.broadband:hover{
+  display: inline-block;
+}
+
+.other:hover{
+  display: inline-block;
 }

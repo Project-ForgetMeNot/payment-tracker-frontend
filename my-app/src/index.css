@@ -1,13 +1,75 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+body { 
+  background: url("/background.jpg"); 
+background-position: center center;
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: cover;
+
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#header
+{
+ text-align: center;
+ height: 100px;
+ margin-bottom: 30px;
+}
+
+#logo h1 /*forget me not title*/
+{
+  display: inline-block;
+  letter-spacing: 0.1em;
+	font-size: 2.6em;
+	font-weight: 700;
+	color: #2C383B;
+	padding-right: 0.50em;
+	border-right: 1px solid rgba(0,0,0,.3);
+  font-family: "Poiret One", cursive;
+  margin-top: 30px;
+}
+
+#logo span /*bill reminder app heading*/
+{
+ 
+  top: -7px;
+	padding-left: 1.50em;
+	letter-spacing: 0.1em;
+  font-size: 22px;
+  color: #2C383B;
+  font-family: 'Poiret One', cursive;
+ 
+}
+
+.btn-circle {
+  text-align: center;
+  display: inline-block;
+  width: 55px;
+  height: 55px;
+  border-radius: 40px;
+  font-size: 1.4em;
+  background-color: #FFD700;
+  border-color: #DAA520;
+}
+
+.car:hover {
+  display: inline-block;
+}
+
+.house:hover{
+  display: inline-block;
+}
+
+.insurance:hover{
+  display: inline-block;
+}
+
+.phone:hover{
+  display: inline-block;
+}
+
+.broadband:hover{
+  display: inline-block;
+}
+
+.other:hover{
+  display: inline-block;
 }

@@ -19,36 +19,13 @@
   }
 }
 
+
 .AddForm{
-  max-width: 480px;
   margin: 0 auto;
+  max-width: 600px;
+  height: auto;
+  
 }
-
-@media screen and (max-width: 500px) {
-  .logo h1 {
-    float: none;
-    display: block;
-    text-align: left;
-    top: 30px;
-  }
-  .header-right {
-    float: none;
-  }
-}
-
-@media screen and (max-width: 500px) {
-  .logo span {
-    float: none;
-    display: block;
-    text-align: center;
-    top: 30px;
-  }
-  .header-right {
-    float: none;
-  }
-}
-
-
 
 @media all and (max-width: 100px) {
   .btn-circle-lg {
@@ -59,4 +36,9 @@
   text-align: center;
   top: 30px;
   }
+}
+
+.buttons{
+  margin-top: -20px;
+  top: 20px;
 }

@@ -1,11 +1,10 @@
 body { 
   background: url("/background.jpg"); 
-background-position: center center;
+background-position: top;
 background-repeat: no-repeat;
-background-attachment: fixed;
-background-size: cover;
-
+width: auto;
 }
+
 
 #header
 {

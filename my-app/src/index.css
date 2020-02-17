@@ -47,6 +47,7 @@ width: auto;
   font-size: 1.4em;
   background-color: #FFD700;
   border-color: #DAA520;
+  
 }
 
 .car:hover {
@@ -76,6 +77,7 @@ width: auto;
 .container {
 font-family: "Poiret One", cursive;
 font-size: larger;
+margin-bottom: -30px;
 }
 
 .btn-primary {
@@ -85,6 +87,23 @@ font-size: larger;
   
 }
 
-.buttons {
-  margin-top: -10px;
+.table {
+ margin: auto;
+  margin-top: 70px;
+  margin-bottom: -20px;
+  max-width: 600px;
+  background: rgb(163, 203, 221);
+  font-family: "Poiret One", cursive;
+  font-size: larger;
+}
+
+.AddForm{
+  margin: 0 auto;
+  max-width: 600px;
+  height: auto;
+  background: -webkit-linear-gradient(left, rgb(163, 203, 221) 30%, rgba(222,222,222,0) 50%, rgba(222,222,222,0) 80%, rgba(222,222,222,1) 100%);
+}
+
+.col {
+  font-weight: bolder;
 }

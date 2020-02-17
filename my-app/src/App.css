@@ -24,6 +24,8 @@
   margin: 0 auto;
   max-width: 600px;
   height: auto;
+  background: -webkit-linear-gradient(left, rgb(163, 203, 221) 20%, rgba(222,222,222,0) 50%, rgba(222,222,222,0) 80%, rgba(222,222,222,1) 100%);
+  
   
 }
 
@@ -38,7 +40,6 @@
   }
 }
 
-.buttons{
-  margin-top: -20px;
-  top: 20px;
-}
+    
+  
+

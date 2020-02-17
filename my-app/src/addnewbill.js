@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 class AddNewBill extends React.Component {
     constructor(props) {
         super(props);
@@ -92,8 +93,7 @@ class AddNewBill extends React.Component {
                                 </div>
                             </div>
 
-                            
-                            <button className="btn btn-primary btn-block">
+                            <button class="btn btn-primary btn-block">
                                 Add
                             </button>
                         </form>

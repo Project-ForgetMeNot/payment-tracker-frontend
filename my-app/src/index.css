@@ -72,3 +72,19 @@ width: auto;
 .other:hover{
   display: inline-block;
 }
+
+.container {
+font-family: "Poiret One", cursive;
+font-size: larger;
+}
+
+.btn-primary {
+  background-color: rgb(97, 182, 221);
+  font-weight: bold;
+  border: none;
+  
+}
+
+.buttons {
+  margin-top: -10px;
+}

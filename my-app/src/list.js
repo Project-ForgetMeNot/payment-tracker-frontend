@@ -4,8 +4,8 @@ class List extends React.Component {
   render() {
     return (
 
-      <div class="table-responsive">
-        <table class="table">
+      <div className="table-responsive">
+        <table className="table">
           <thead>
             <tr>
               <th scope="col">Bill Type</th>
@@ -19,20 +19,20 @@ class List extends React.Component {
               <th scope="row">1</th>
               <td>Cell</td>
               <td>Cell</td>
-              <td><button class="btn"><i class="fa fa-trash"></i></button></td>
+              <td><button className="btn"><i className="fa fa-trash"></i></button></td>
             </tr>
             <tr>
               <th scope="row">2</th>
               <td>Cell</td>
               <td>Cell</td>
-              <td><button class="btn"><i class="fa fa-trash"></i></button></td>
+              <td><button className="btn"><i className="fa fa-trash"></i></button></td>
 
             </tr>
             <tr>
               <th scope="row">3</th>
               <td>Cell</td>
               <td>Cell</td>
-              <td><button class="btn"><i class="fa fa-trash"></i></button></td>
+              <td><button className="btn"><i className="fa fa-trash"></i></button></td>
             </tr>
           </tbody>
         </table>

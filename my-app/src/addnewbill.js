@@ -7,7 +7,8 @@ class AddNewBill extends React.Component {
         this.state = {
             emailText: props.emailText,
             providerText: props.providerText,
-            renewalDate: props.renewalDate
+            renewalDate: props.renewalDate,
+            categories: props.categories
         }
     }
 
@@ -38,6 +39,8 @@ class AddNewBill extends React.Component {
     }
 
     render() {
+        const cats = this.state.categories;
+        
         return (
             <div className="container">
                 <div className="AddForm card mb-5">
@@ -45,17 +48,15 @@ class AddNewBill extends React.Component {
                         <form>
                             <div className="form-row">
                             <div className="form-group col-md-6">
-                                    <label for="exampleFormControlSelect1">Bill Type</label>
+                                    <label htmlFor="exampleFormControlSelect1">Bill Type</label>
                                     <select className="form-control" id="exampleFormControlSelect1">
-                                        <option>Car Insurance</option>
-                                        <option>Buildings and Contents Insurance</option>
-                                        <option>Gas and Electric</option>
-                                        <option>MOT</option>
-                                        <option>Other</option>
+                                        {cats.map((value, index) => {
+                                            return <option value={value.id} key={index}>{value.name}</option>
+                                        })}
                                     </select>
                                 </div>
                                 <div className="form-group col-md-6">
-                                <label for="renewalDateInput">Renewal Date</label>
+                                <label htmlFor="renewalDateInput">Renewal Date</label>
                                 <input
                                     id="renewalDateInput"
                                     type="date"
@@ -69,7 +70,7 @@ class AddNewBill extends React.Component {
                             
                             <div className="form-row">
                             <div className="form-group col-md-6">
-                                <label for="nameOfBillProviderInput">Name of Bill Provider</label>
+                                <label htmlFor="nameOfBillProviderInput">Name of Bill Provider</label>
                                 <input
                                     id="nameOfBillProviderInput"
                                     type="text"
@@ -77,11 +78,11 @@ class AddNewBill extends React.Component {
                                     value={this.state.providerText}
                                     className="form-control"
                                     placeholder="Type company here"
-                                    autocomplete="off"
+                                    autoComplete="off"
                                 />
                             </div>
                             <div className="form-group col-md-6">
-                                    <label for="emailInput">Email address</label>
+                                    <label htmlFor="emailInput">Email address</label>
                                     <input
                                         id="emailInput"
                                         type="email"
@@ -93,7 +94,7 @@ class AddNewBill extends React.Component {
                                 </div>
                             </div>
 
-                            <button class="btn btn-primary btn-block">
+                            <button className="btn btn-primary btn-block">
                                 Add
                             </button>
                         </form>

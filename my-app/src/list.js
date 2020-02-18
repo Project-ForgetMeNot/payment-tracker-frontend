@@ -33,9 +33,13 @@ class List extends React.Component {
                         {bills.map((bill, index) => {
                             return <tr key={index}>
                                 <th scope="row">{bill.billType}</th>
-                                <td>{bill.renewalDate}</td>
+                                <td>{bill.renewalDate.split("T")[0]}</td>
                                 <td>{bill.billProvider}</td>
-                                <td><button className="btn"><i className="fa fa-trash"></i>{bill.billId}</button></td>
+                                <td>
+                                    <button className="btn">
+                                        <i className="fa fa-trash"></i>(#{bill.billId})
+                                    </button>
+                                </td>
                             </tr>
                         })}
                     </tbody>

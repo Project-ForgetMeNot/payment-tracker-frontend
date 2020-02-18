@@ -48,8 +48,11 @@ class App extends React.Component {
 
     axios.post("https://0w2rty5zca.execute-api.eu-west-1.amazonaws.com/dev/bills", newBill)
     .then((response) => {
-      const copyOfBills = billList
-      copyOfBills.slice()
+      const copyOfBills = billList;
+      
+      newBill.billId = response.data.bill.billId;
+      
+      copyOfBills.slice();
       copyOfBills.push(newBill);
       this.setState({
         billList: copyOfBills

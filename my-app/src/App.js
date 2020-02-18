@@ -5,6 +5,7 @@ import Header from './Header';
 import AddNewBill from "./AddNewBill";
 import List from './List';
 import CategoryButtons from './CategoryButtons';
+import alertify from 'alertifyjs';
 
 class App extends React.Component {
   constructor() {
@@ -57,9 +58,9 @@ class App extends React.Component {
       this.setState({
         billList: copyOfBills
       });
-
+      alertify.success('Success message');
+      
       this.resetForm()
-
     })
     .catch((err) => {
       console.log(err);

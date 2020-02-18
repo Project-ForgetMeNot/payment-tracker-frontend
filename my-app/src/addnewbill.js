@@ -5,30 +5,39 @@ class AddNewBill extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            emailText: props.emailText,
-            providerText: props.providerText,
-            renewalDate: props.renewalDate,
+            billType: props.myFormFields.billType,
+            emailAdd: props.myFormFields.emailAdd,
+            billProvider: props.myFormFields.billProvider,
+            renewalDate: props.myFormFields.renewalDate,
             categories: props.categories
         }
     }
 
-    componentWillReceiveProps(props) {
+    UNSAFE_componentWillReceiveProps(props) {
         this.setState({
-            emailText: this.props.emailText,
-            providerText: this.props.providerText,
-            renewalDate: this.props.renewalDate
+            billType: props.myFormFields.billType,
+            emailAdd: props.myFormFields.emailAdd,
+            billProvider: props.myFormFields.billProvider,
+            renewalDate: props.myFormFields.renewalDate,
+            categories: props.categories
         });
     }
 
-    updateEmailText = (event) => {
+    updateBillType = (event) => {
         this.setState({
-            emailText: event.target.value
+            billType: event.target.value
         });
     }
 
-    updateProviderText = (event) => {
+    updateEmailAdd = (event) => {
         this.setState({
-            providerText: event.target.value
+            emailAdd: event.target.value
+        });
+    }
+
+    updateBillProvider = (event) => {
+        this.setState({
+            billProvider: event.target.value
         });
     }
 
@@ -38,8 +47,27 @@ class AddNewBill extends React.Component {
         });
     }
 
+    addNewBillFn = () => {
+        this.props.addNewBillFunc(
+            this.state.billType,
+            this.state.renewalDate,
+            this.state.billProvider,
+            this.state.emailAdd
+        );
+
+    
+        // this.setState({
+        //     billType: "",
+        //     emailAdd: "",
+        //     billProvider: "",
+        //     renewalDate: ""
+        //   });
+    }
+
+
     render() {
-        const cats = this.state.categories;
+        const myForm = this.state;
+        const categoryList = this.state.categories;
         
         return (
             <div className="container">
@@ -49,8 +77,14 @@ class AddNewBill extends React.Component {
                             <div className="form-row">
                             <div className="form-group col-md-6">
                                     <label htmlFor="exampleFormControlSelect1">Bill Type</label>
-                                    <select className="form-control" id="exampleFormControlSelect1">
-                                        {cats.map((value, index) => {
+                                    <select 
+                                        className="form-control" 
+                                        id="exampleFormControlSelect1"
+                                        onChange={this.updateBillType}
+                                        value={myForm.billType}
+                                    >
+                                        <option>Select a category</option>
+                                        {categoryList.map((value, index) => {
                                             return <option value={value.id} key={index}>{value.name}</option>
                                         })}
                                     </select>
@@ -61,7 +95,7 @@ class AddNewBill extends React.Component {
                                     id="renewalDateInput"
                                     type="date"
                                     onChange={this.updateRenewalDate}
-                                    value={this.state.renewalDate}
+                                    value={myForm.renewalDate}
                                     className="form-control"
                                 />
                             </div>
@@ -74,8 +108,8 @@ class AddNewBill extends React.Component {
                                 <input
                                     id="nameOfBillProviderInput"
                                     type="text"
-                                    onChange={this.updateProviderText}
-                                    value={this.state.providerText}
+                                    onChange={this.updateBillProvider}
+                                    value={myForm.billProvider}
                                     className="form-control"
                                     placeholder="Type company here"
                                     autoComplete="off"
@@ -86,15 +120,18 @@ class AddNewBill extends React.Component {
                                     <input
                                         id="emailInput"
                                         type="email"
-                                        onChange={this.updateEmailText}
-                                        value={this.state.emailText}
+                                        onChange={this.updateEmailAdd}
+                                        value={myForm.emailAdd}
                                         className="form-control"
                                         placeholder="name@example.com"
                                     />
                                 </div>
                             </div>
 
-                            <button className="btn btn-primary btn-block">
+                            <button 
+                            type="button"
+                            onClick={() => this.addNewBillFn()}
+                            className="btn btn-primary btn-block">
                                 Add
                             </button>
                         </form>

@@ -1,44 +1,48 @@
 import React from 'react';
 
 class List extends React.Component {
-  render() {
-    return (
+    constructor(props) {
+        super(props);
+        this.state = {
+            bills: props.bills
+        }
+    }
 
-      <div className="table-responsive">
-        <table className="table">
-          <thead>
-            <tr>
-              <th scope="col">Bill Type</th>
-              <th scope="col">Renewal Date</th>
-              <th scope="col">Name of Bill Provider</th>
-              <th scope="col">Delete</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Cell</td>
-              <td>Cell</td>
-              <td><button className="btn"><i className="fa fa-trash"></i></button></td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Cell</td>
-              <td>Cell</td>
-              <td><button className="btn"><i className="fa fa-trash"></i></button></td>
+    UNSAFE_componentWillReceiveProps(props) {
+        this.setState({
+            bills: props.bills
+        });
+    }
 
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>Cell</td>
-              <td>Cell</td>
-              <td><button className="btn"><i className="fa fa-trash"></i></button></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    )
-  }
+    render() {
+        const bills = this.state.bills;
+
+        return (
+
+            <div className="table-responsive">
+                <table className="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Bill Type</th>
+                            <th scope="col">Renewal Date</th>
+                            <th scope="col">Name of Bill Provider</th>
+                            <th scope="col">Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {bills.map((bill, index) => {
+                            return <tr key={index}>
+                                <th scope="row">{bill.billType}</th>
+                                <td>{bill.renewalDate}</td>
+                                <td>{bill.billProvider}</td>
+                                <td><button className="btn"><i className="fa fa-trash"></i>{bill.billId}</button></td>
+                            </tr>
+                        })}
+                    </tbody>
+                </table>
+            </div>
+        )
+    }
 }
 
 export default List;

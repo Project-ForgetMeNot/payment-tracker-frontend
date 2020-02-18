@@ -51,7 +51,7 @@ class App extends React.Component {
       const copyOfBills = billList;
       
       newBill.billId = response.data.bill.billId;
-      
+
       copyOfBills.slice();
       copyOfBills.push(newBill);
       this.setState({
@@ -87,7 +87,20 @@ class App extends React.Component {
       { id: 6, name: 'Broadband', icon: 'fas fa-wifi' },
       { id: 7, name: 'Others', icon: 'fa fa-search' }
     ];
-    return cats;
+
+    if (id) {
+      let myCategory = {};
+      cats.forEach((cat) => {
+        if (id === cat.id) {
+          myCategory = cat;
+        }
+      });
+
+      return  myCategory;
+    
+    } else {
+      return cats;
+    }
   }
 
   getUserId = () => {
@@ -110,6 +123,7 @@ class App extends React.Component {
         <CategoryButtons categories={cats} />
         <List
           bills={myBillList}
+          categoriesFunc={this.categories}
         />
 
       </div>

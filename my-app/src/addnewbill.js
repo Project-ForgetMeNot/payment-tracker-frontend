@@ -54,14 +54,6 @@ class AddNewBill extends React.Component {
             this.state.billProvider,
             this.state.emailAdd
         );
-
-    
-        // this.setState({
-        //     billType: "",
-        //     emailAdd: "",
-        //     billProvider: "",
-        //     renewalDate: ""
-        //   });
     }
 
 

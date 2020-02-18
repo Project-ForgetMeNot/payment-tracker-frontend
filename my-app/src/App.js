@@ -48,23 +48,23 @@ class App extends React.Component {
     }
 
     axios.post("https://0w2rty5zca.execute-api.eu-west-1.amazonaws.com/dev/bills", newBill)
-    .then((response) => {
-      const copyOfBills = billList;
-      
-      newBill.billId = response.data.bill.billId;
+      .then((response) => {
+        const copyOfBills = billList;
 
-      copyOfBills.slice();
-      copyOfBills.push(newBill);
-      this.setState({
-        billList: copyOfBills
+        newBill.billId = response.data.bill.billId;
+
+        copyOfBills.slice();
+        copyOfBills.push(newBill);
+        this.setState({
+          billList: copyOfBills
+        });
+        alertify.success('Bill added');
+
+        this.resetForm()
+      })
+      .catch((err) => {
+        console.log(err);
       });
-      alertify.success('Success message');
-      
-      this.resetForm()
-    })
-    .catch((err) => {
-      console.log(err);
-    });
   }
 
   resetForm = () => {
@@ -97,11 +97,23 @@ class App extends React.Component {
         }
       });
 
-      return  myCategory;
-    
+      return myCategory;
+
     } else {
       return cats;
     }
+  }
+  deleteBill = (id) => {
+    const myapp = this;
+    alertify.confirm("Are you sure you want to delete this bill?",function(){
+      myapp.deleteBillConfirm(id)
+    });
+    
+  }
+
+  deleteBillConfirm = (id) => {
+    ///axios
+    alertify.error('Task deleted with' + id);
   }
 
   getUserId = () => {
@@ -125,6 +137,7 @@ class App extends React.Component {
         <List
           bills={myBillList}
           categoriesFunc={this.categories}
+          deleteFunc={this.deleteBill}
         />
 
       </div>

@@ -20,6 +20,10 @@ class List extends React.Component {
         }
     }
 
+    deleteBillFn = (id) => {
+        this.props.deleteFunc(id);
+    }
+
     render() {
         const bills = this.state.bills;
 
@@ -46,8 +50,12 @@ class List extends React.Component {
                                     <td>{bill.renewalDate.split("T")[0]}</td>
                                     <td>{bill.billProvider}</td>
                                     <td>
-                                        <button className="btn">
-                                            <i className="fa fa-trash"></i>(#{bill.billId})
+                                        <button 
+                                        type="button"
+                                        onClick={() => this.deleteBillFn(bill.billId)}
+                                        className="btn"
+                                        >
+                                        <i className="fa fa-trash"></i>(#{bill.billId})
                                     </button>
                                     </td>
                                 </tr>

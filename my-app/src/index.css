@@ -14,6 +14,17 @@ background-size: cover;
  margin-bottom: 30px;
 }
 
+.table {
+  margin: auto;
+  margin-top: 65px;
+   max-width: 600px;
+   background: rgb(163, 203, 221);
+   font-family: "Poiret One", cursive;
+   font-size: medium;
+   margin-bottom: 3em;
+   
+ }
+
 #logo h1 /*forget me not title*/
 {
   display: inline-block;
@@ -89,15 +100,7 @@ margin-bottom: -30px;
   
 }
 
-.table {
- margin: auto;
-  margin-top: 70px;
-  margin-bottom: -20px;
-  max-width: 600px;
-  background: rgb(163, 203, 221);
-  font-family: "Poiret One", cursive;
-  font-size: larger;
-}
+
 
 .AddForm{
   margin: 0 auto;

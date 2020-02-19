@@ -30,7 +30,8 @@ class List extends React.Component {
         return (
             <div className="container">
                 <div className="table-responsive">
-                    <table className="table">
+                    <table className="table table-striped table table-hover table table-sm">
+                        
                         <thead>
                             <tr>
                                 <th scope="col">Bill Type</th>
@@ -61,6 +62,7 @@ class List extends React.Component {
                                 </tr>
                             })}
                         </tbody>
+                        
                     </table>
                 </div>
             </div>

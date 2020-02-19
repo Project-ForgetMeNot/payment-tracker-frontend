@@ -37,8 +37,8 @@ class List extends React.Component {
                         <thead>
                             <tr>
                                 <th scope="col">Bill Type</th>
-                                <th scope="col">Renewal Date</th>
                                 <th scope="col">Name of Bill Provider</th>
+                                <th scope="col">Renewal Date</th>
                                 <th scope="col">Delete</th>
                             </tr>
                         </thead>
@@ -50,8 +50,9 @@ class List extends React.Component {
                                     <th scope="row">
                                         <i className={thisCat.icon}></i> {thisCat.name}
                                     </th>
-                                    <td>{bill.renewalDate.split("T")[0]}</td>
+                                    
                                     <td>{bill.billProvider}</td>
+                                    <td>{bill.renewalDate.split("T")[0]}</td>
                                     <td>
                                         <button
                                             type="button"

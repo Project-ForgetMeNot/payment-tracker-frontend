@@ -82,9 +82,9 @@ class App extends React.Component {
 
   categories = (id) => {
     const cats = [
-      { id: 1, name: 'Automotive', icon: 'fas fa-car' },
-      { id: 2, name: 'Home', icon: 'fas fa-home' },
       { id: 4, name: 'Insurance', icon: 'fas fa-car-crash' },
+      { id: 1, name: 'Car', icon: 'fas fa-car' },
+      { id: 2, name: 'Home', icon: 'fas fa-home' },
       { id: 5, name: 'Phone', icon: 'fas fa-phone' },
       { id: 6, name: 'Broadband', icon: 'fas fa-wifi' },
       { id: 7, name: 'Others', icon: 'fa fa-search' }

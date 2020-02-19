@@ -8,11 +8,13 @@ class List extends React.Component {
         }
     }
 
+
     UNSAFE_componentWillReceiveProps(props) {
         this.setState({
             bills: props.bills
         });
     }
+
 
     categories = (id) => {
         if(id){
@@ -21,6 +23,8 @@ class List extends React.Component {
     }
 
     deleteBillFn = (id) => {
+
+        //set state//
         this.props.deleteFunc(id);
     }
 

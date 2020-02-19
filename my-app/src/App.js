@@ -79,6 +79,7 @@ class App extends React.Component {
     })
   }
 
+
   categories = (id) => {
     const cats = [
       { id: 1, name: 'Automotive', icon: 'fas fa-car' },
@@ -108,14 +109,22 @@ class App extends React.Component {
     alertify.confirm("Are you sure you want to delete this bill?",function(){
       myapp.deleteBillConfirm(id)
     });
-    
+    this.setState ({
+
+    })
   }
 
+  
   deleteBillConfirm = (id) => {
-    ///axios
+    axios.delete ("https://0w2rty5zca.execute-api.eu-west-1.amazonaws.com/dev/bills/${billId}")
+    const filteredBills = this.state.bills.filter (bills => {
+      return bills.Id !== id;
+    });
+    this.setState ({
+      bills: filteredBills
+    })
     alertify.error('Task deleted with' + id);
   }
-
   getUserId = () => {
     return 1
   }

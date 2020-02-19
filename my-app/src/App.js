@@ -106,29 +106,26 @@ class App extends React.Component {
   }
   deleteBill = (id) => {
     const myapp = this;
-    alertify.confirm("Are you sure you want to delete this bill?",function(){
+    alertify.confirm("Are you sure you want to delete this bill?", function () {
       myapp.deleteBillConfirm(id)
     });
-    this.setState ({
-
-    })
   }
 
-  
+
   deleteBillConfirm = (id) => {
-    axios.delete ("https://0w2rty5zca.execute-api.eu-west-1.amazonaws.com/dev/bills/${billId}")
-    const filteredBills = this.state.bills.filter (bills => {
-      return bills.Id !== id;
+    axios.delete(`https://0w2rty5zca.execute-api.eu-west-1.amazonaws.com/dev/bills/${id}`)
+    const filteredBills = this.state.billList.filter(bill => {
+      return bill.billId !== id;
     });
-    this.setState ({
-      bills: filteredBills
+    this.setState({
+      billList: filteredBills
     })
     alertify.error('Task deleted with' + id);
   }
   getUserId = () => {
     return 1
   }
-
+  
   render() {
     const cats = this.categories();
     const myFormFields = this.state.formFields;

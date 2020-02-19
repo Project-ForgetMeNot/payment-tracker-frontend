@@ -1,8 +1,9 @@
 body { 
-  background: url("/background.jpg"); 
-background-position: top;
+background-image: url("/background.jpg"); 
+background-position: center center;
 background-repeat: no-repeat;
-width: auto;
+background-attachment: fixed;
+background-size: cover;
 }
 
 
@@ -84,6 +85,7 @@ margin-bottom: -30px;
   background-color: rgb(97, 182, 221);
   font-weight: bold;
   border: none;
+  font-size: small;
   
 }
 

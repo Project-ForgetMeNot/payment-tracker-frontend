@@ -17,7 +17,8 @@ class App extends React.Component {
         renewalDate: "",
         billProvider: "",
         emailAdd: ""
-      }
+      },
+      sortOrder: null,
     }
   }
 
@@ -35,6 +36,17 @@ class App extends React.Component {
         console.log(err);
       })
   }
+
+  // Whenever someone clicks on a up/down button, this functions needs to be called, to update the state
+  updateSortOrder = (ord) => {
+    const order = ("asc", "desc");
+    this.setState({
+      sortOrder: order
+    })
+    // order = "asc" or "desc"
+    // updates the sort order on state
+  }
+
 
   addNewBill = (category, date, name, email) => {
     const billList = this.state.billList;
@@ -125,11 +137,44 @@ class App extends React.Component {
   getUserId = () => {
     return 1
   }
-  
+
+
   render() {
     const cats = this.categories();
-    const myFormFields = this.state.formFields;
     const myBillList = this.state.billList;
+    const myFormFields = this.state.formFields;
+   
+    if (this.state.sortOrder !== null) {
+      myBillList.sort((bill1, bill2) => {
+        if (this.state.sortOrder === "asc") {
+          if (bill1.renewalDate > bill2.renewalDate) {
+            return -1;
+          }
+          if (bill2.renewalDate > bill1.renewalDate) {
+            return 1;
+          }
+        } else if (this.state.sortOrder === "desc") {
+          if (bill1.renewalDate > bill2.renewalDate) {
+            return 1;
+          }
+          if (bill2.renewalDate > bill1.renewalDate) {
+            return -1;
+          }
+          return 0;
+        }
+      })
+    }
+
+
+    // if this.state.sortOrder !== null {
+    // use .sort() to sort the billsList appropriately
+    // sort asc or desc?//
+
+
+
+
+
+
 
     return (
       <div className="App">
@@ -144,6 +189,7 @@ class App extends React.Component {
           bills={myBillList}
           categoriesFunc={this.categories}
           deleteFunc={this.deleteBill}
+          sortOrderFn={this.updateSortOrder}
         />
 
       </div>

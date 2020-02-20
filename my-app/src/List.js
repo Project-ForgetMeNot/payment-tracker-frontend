@@ -1,21 +1,6 @@
 import React from 'react';
 
 class List extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            bills: props.bills
-        }
-    }
-
-
-    UNSAFE_componentWillReceiveProps(props) {
-        this.setState({
-            bills: props.bills
-        });
-    }
-
-
     categories = (id) => {
         if (id) {
             return this.props.categoriesFunc(id);
@@ -26,8 +11,16 @@ class List extends React.Component {
         this.props.deleteFunc(id);
     }
 
+    updatesortOrderAsc = () => {
+        this.props.sortOrderFn("asc");
+    }
+
+    updatesortOrderDesc = () => {
+        this.props.sortOrderFn("desc");
+    }
+
     render() {
-        const bills = this.state.bills;
+        const bills = this.props.bills;
 
         return (
             <div className="container">
@@ -38,7 +31,7 @@ class List extends React.Component {
                             <tr>
                                 <th scope="col">Bill Type</th>
                                 <th scope="col">Name of Bill Provider</th>
-                                <th scope="col">Renewal Date</th>
+                                <th scope="col">Renewal Date<button onClick= {this.updatesortOrderAsc}>Arrow</button></th>
                                 <th scope="col">Delete</th>
                             </tr>
                         </thead>

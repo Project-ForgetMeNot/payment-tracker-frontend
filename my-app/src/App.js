@@ -37,14 +37,12 @@ class App extends React.Component {
       })
   }
 
-  // Whenever someone clicks on a up/down button, this functions needs to be called, to update the state
+ 
   updateSortOrder = (ord) => {
     const order = ("asc", "desc");
     this.setState({
       sortOrder: order
     })
-    // order = "asc" or "desc"
-    // updates the sort order on state
   }
 
 
@@ -164,16 +162,6 @@ class App extends React.Component {
         }
       })
     }
-
-
-    // if this.state.sortOrder !== null {
-    // use .sort() to sort the billsList appropriately
-    // sort asc or desc?//
-
-
-
-
-
 
 
     return (

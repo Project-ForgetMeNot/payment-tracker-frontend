@@ -31,7 +31,7 @@ class List extends React.Component {
                             <tr>
                                 <th scope="col">Bill Type</th>
                                 <th scope="col">Name of Bill Provider</th>
-                                <th scope="col">Renewal Date<button onClick= {this.updatesortOrderAsc}>Arrow</button></th>
+                                <th scope="col">Renewal Date <button onClick={this.updatesortOrderAsc}><i class="fas fa-sort-up"></i></button><button onClick={this.updatesortOrderDesc}><i class="fas fa-sort-down"></i></button></th>
                                 <th scope="col">Delete</th>
                             </tr>
                         </thead>
@@ -43,7 +43,7 @@ class List extends React.Component {
                                     <th scope="row">
                                         <i className={thisCat.icon}></i> {thisCat.name}
                                     </th>
-                                    
+
                                     <td>{bill.billProvider}</td>
                                     <td>{bill.renewalDate.split("T")[0]}</td>
                                     <td>

@@ -112,3 +112,7 @@ margin-bottom: -30px;
 .col {
   font-weight: bolder;
 }
+
+.fas-fa-sort-up {
+  display: inline;
+}

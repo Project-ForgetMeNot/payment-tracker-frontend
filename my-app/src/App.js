@@ -36,12 +36,10 @@ class App extends React.Component {
   };
 
   updateSortOrder = (ord) => {
-    const order = ("asc", "desc");
     this.setState({
-      sortOrder: order
+      sortOrder: ord
     });
   };
-
 
   addNewBill = (category, date, name, email) => {
     const billList = this.state.billList;
@@ -131,29 +129,16 @@ class App extends React.Component {
     const cats = this.categories();
     const myBillList = this.state.billList;
     const myFormFields = this.state.formFields;
-
-    if (this.state.sortOrder !== null) {
-      myBillList.sort((bill1, bill2) => {
-        if (this.state.sortOrder === "asc") {
-          if (bill1.renewalDate > bill2.renewalDate) {
-            return -1;
-          }
-          if (bill2.renewalDate > bill1.renewalDate) {
-            return 1;
-          }
-        } else if (this.state.sortOrder === "desc") {
-          if (bill1.renewalDate < bill2.renewalDate) {
-            return -1;
-          }
-          if (bill2.renewalDate < bill1.renewalDate) {
-            return 1;
-          }
-          return 0;
-        }
-      })
-      
-    }
-
+    const billOrder = this.state.sortOrder;
+    
+    if (billOrder !== null) {
+      if (billOrder === "desc") {
+        myBillList.sort((a, b) => new Date(b.renewalDate) - new Date(a.renewalDate))
+      } else {
+        myBillList.sort((a, b) => new Date(a.renewalDate) - new Date(b.renewalDate))
+      }
+    };
+   
     return (
       <div className="App">
         <Header />
@@ -169,7 +154,6 @@ class App extends React.Component {
           deleteFunc={this.deleteBill}
           sortOrderFn={this.updateSortOrder}
         />
-
       </div>
     );
   }

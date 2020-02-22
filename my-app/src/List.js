@@ -1,7 +1,7 @@
 import React from 'react';
 
 class List extends React.Component {
-    
+
     categories = (id) => {
         if (id) {
             return this.props.categoriesFunc(id);
@@ -12,11 +12,11 @@ class List extends React.Component {
         this.props.deleteFunc(id);
     }
 
-    updatesortOrderAsc = () => {
+    updateSortOrderAsc = () => {
         this.props.sortOrderFn("asc");
     }
 
-    updatesortOrderDesc = () => {
+    updateSortOrderDesc = () => {
         this.props.sortOrderFn("desc");
     }
 
@@ -32,7 +32,16 @@ class List extends React.Component {
                             <tr>
                                 <th scope="col">Bill Type</th>
                                 <th scope="col">Name of Bill Provider</th>
-                                <th scope="col">Renewal Date <button onClick={this.updatesortOrderAsc}><i class="fas fa-sort-up"></i></button><button onClick={this.updatesortOrderDesc}><i class="fas fa-sort-down"></i></button></th>
+                                <th scope="col">Renewal Date
+                                    <button
+                                        onClick={this.updateSortOrderAsc}>
+                                        <i className="fas fa-sort-up"></i>
+                                    </button>
+                                    <button
+                                        onClick={this.updateSortOrderDesc}>
+                                        <i className="fas fa-sort-down"></i>
+                                    </button>
+                                </th>
                                 <th scope="col">Delete</th>
                             </tr>
                         </thead>

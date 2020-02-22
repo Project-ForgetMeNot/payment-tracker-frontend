@@ -64,7 +64,8 @@ class App extends React.Component {
         alertify.success('Bill added');
         this.resetForm()
       }).catch((err) => {
-        console.log(err);
+        console.log({err:err});
+        alertify.error(err.response.data.error);
       });
   }
 

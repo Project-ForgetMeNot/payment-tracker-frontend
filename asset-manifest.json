@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/Project-ForgetMeNot/payment-tracker-frontend/static/css/main.8288cd4d.chunk.css",
+    "main.js": "/Project-ForgetMeNot/payment-tracker-frontend/static/js/main.0744d753.chunk.js",
+    "main.js.map": "/Project-ForgetMeNot/payment-tracker-frontend/static/js/main.0744d753.chunk.js.map",
+    "runtime-main.js": "/Project-ForgetMeNot/payment-tracker-frontend/static/js/runtime-main.de5b6d38.js",
+    "runtime-main.js.map": "/Project-ForgetMeNot/payment-tracker-frontend/static/js/runtime-main.de5b6d38.js.map",
+    "static/css/2.15ad874f.chunk.css": "/Project-ForgetMeNot/payment-tracker-frontend/static/css/2.15ad874f.chunk.css",
+    "static/js/2.8edf93ae.chunk.js": "/Project-ForgetMeNot/payment-tracker-frontend/static/js/2.8edf93ae.chunk.js",
+    "static/js/2.8edf93ae.chunk.js.map": "/Project-ForgetMeNot/payment-tracker-frontend/static/js/2.8edf93ae.chunk.js.map",
+    "index.html": "/Project-ForgetMeNot/payment-tracker-frontend/index.html",
+    "precache-manifest.bd43a577584eb2e6f13acc25dc3a9405.js": "/Project-ForgetMeNot/payment-tracker-frontend/precache-manifest.bd43a577584eb2e6f13acc25dc3a9405.js",
+    "service-worker.js": "/Project-ForgetMeNot/payment-tracker-frontend/service-worker.js",
+    "static/css/2.15ad874f.chunk.css.map": "/Project-ForgetMeNot/payment-tracker-frontend/static/css/2.15ad874f.chunk.css.map",
+    "static/css/main.8288cd4d.chunk.css.map": "/Project-ForgetMeNot/payment-tracker-frontend/static/css/main.8288cd4d.chunk.css.map",
+    "static/js/2.8edf93ae.chunk.js.LICENSE.txt": "/Project-ForgetMeNot/payment-tracker-frontend/static/js/2.8edf93ae.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.de5b6d38.js",
+    "static/css/2.15ad874f.chunk.css",
+    "static/js/2.8edf93ae.chunk.js",
+    "static/css/main.8288cd4d.chunk.css",
+    "static/js/main.0744d753.chunk.js"
+  ]
+}

@@ -24,15 +24,15 @@ class App extends React.Component {
 
   componentDidMount() {
     axios.get("https://0w2rty5zca.execute-api.eu-west-1.amazonaws.com/dev/bills")
-    .then((response) => {
+      .then((response) => {
         const bills = response.data.bills;
 
         this.setState({
           billList: bills
         });
-    }).catch((err) => {
+      }).catch((err) => {
         console.log(err);
-    });
+      });
   };
 
   updateSortOrder = (ord) => {
@@ -53,19 +53,19 @@ class App extends React.Component {
     };
 
     axios.post("https://0w2rty5zca.execute-api.eu-west-1.amazonaws.com/dev/bills", newBill)
-    .then((response) => {
-      const copyOfBills = billList;
-      newBill.billId = response.data.bill.billId;
-      copyOfBills.slice();
-      copyOfBills.push(newBill);
-      this.setState({
-        billList: copyOfBills
-      });
+      .then((response) => {
+        const copyOfBills = billList;
+        newBill.billId = response.data.bill.billId;
+        copyOfBills.slice();
+        copyOfBills.push(newBill);
+        this.setState({
+          billList: copyOfBills
+        });
         alertify.success('Bill added');
         this.resetForm()
-    }).catch((err) => {
-      console.log(err);
-    });
+      }).catch((err) => {
+        console.log(err);
+      });
   }
 
   resetForm = () => {
@@ -89,7 +89,7 @@ class App extends React.Component {
       { id: 5, name: 'Broadband', icon: 'fas fa-wifi' },
       { id: 6, name: 'Others', icon: 'fa fa-search' }
     ];
-  
+
     if (id) {
       let myCategory = {};
       cats.forEach((cat) => {
@@ -99,10 +99,10 @@ class App extends React.Component {
       });
       return myCategory;
     } else {
-    return cats;
+      return cats;
     }
   }
-  
+
   deleteBill = (id) => {
     const myapp = this;
     alertify.confirm("Are you sure you want to delete this bill?", function () {
@@ -120,17 +120,17 @@ class App extends React.Component {
     })
     alertify.error('Task deleted');
   }
-    
-    getUserId = () => {
+
+  getUserId = () => {
     return 1
-    }
+  }
 
   render() {
     const cats = this.categories();
     const myBillList = this.state.billList;
     const myFormFields = this.state.formFields;
     const billOrder = this.state.sortOrder;
-    
+
     if (billOrder !== null) {
       if (billOrder === "desc") {
         myBillList.sort((a, b) => new Date(b.renewalDate) - new Date(a.renewalDate))
@@ -138,7 +138,7 @@ class App extends React.Component {
         myBillList.sort((a, b) => new Date(a.renewalDate) - new Date(b.renewalDate))
       }
     };
-   
+
     return (
       <div className="App">
         <Header />
@@ -158,6 +158,5 @@ class App extends React.Component {
     );
   }
 }
-
 
 export default App;

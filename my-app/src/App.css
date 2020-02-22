@@ -12,7 +12,6 @@
   color: white;
 }
 
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -22,10 +21,8 @@
   }
 }
 
-
 @media all and (max-width: 100px) {
-  .btn-circle-lg {
-  
+  .btn-circle-lg { 
   float:none;
   display: block;
   margin: 0.2em auto;

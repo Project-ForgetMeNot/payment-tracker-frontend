@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 class AddNewBill extends React.Component {
     constructor(props) {
         super(props);
@@ -46,7 +45,6 @@ class AddNewBill extends React.Component {
         );
     }
 
-
     render() {
         const myForm = this.state;
         const categoryList = this.state.categories;
@@ -58,7 +56,8 @@ class AddNewBill extends React.Component {
                         <form>
                             <div className="form-row">
                             <div className="form-group col-md-6">
-                                    <label htmlFor="exampleFormControlSelect1">Bill Type</label>
+                                    <label 
+                                    htmlFor="exampleFormControlSelect1">Bill Type</label>
                                     <select 
                                         className="form-control" 
                                         id="exampleFormControlSelect1"
@@ -109,7 +108,6 @@ class AddNewBill extends React.Component {
                                     />
                                 </div>
                             </div>
-
                             <button 
                             type="button"
                             onClick={() => this.addNewBillFn()}
@@ -123,4 +121,5 @@ class AddNewBill extends React.Component {
         )
     }
 }
+
 export default AddNewBill;    

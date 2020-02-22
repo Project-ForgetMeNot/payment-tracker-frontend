@@ -1,17 +1,5 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+@import '../node_modules/alertifyjs/build/css/alertify.css';
+@import '../node_modules/alertifyjs/build/css/themes/default.css';
 
 .App-header {
   background-color: #282c34;
@@ -24,10 +12,6 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -36,3 +20,17 @@
     transform: rotate(360deg);
   }
 }
+
+@media all and (max-width: 100px) {
+  .btn-circle-lg { 
+  float:none;
+  display: block;
+  margin: 0.2em auto;
+  text-align: center;
+  top: 30px;
+  }
+}
+
+    
+  
+

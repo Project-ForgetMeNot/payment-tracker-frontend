@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/payment-tracker-frontend/static/css/main.8288cd4d.chunk.css",
+    "main.css": "/payment-tracker-frontend/static/css/main.06f9695e.chunk.css",
     "main.js": "/payment-tracker-frontend/static/js/main.0744d753.chunk.js",
     "main.js.map": "/payment-tracker-frontend/static/js/main.0744d753.chunk.js.map",
     "runtime-main.js": "/payment-tracker-frontend/static/js/runtime-main.50cb428d.js",
@@ -9,17 +9,18 @@
     "static/js/2.8edf93ae.chunk.js": "/payment-tracker-frontend/static/js/2.8edf93ae.chunk.js",
     "static/js/2.8edf93ae.chunk.js.map": "/payment-tracker-frontend/static/js/2.8edf93ae.chunk.js.map",
     "index.html": "/payment-tracker-frontend/index.html",
-    "precache-manifest.7cdd95734dce173229e973d3cfc74639.js": "/payment-tracker-frontend/precache-manifest.7cdd95734dce173229e973d3cfc74639.js",
+    "precache-manifest.56e7cd3016979276fc77b474159b6c88.js": "/payment-tracker-frontend/precache-manifest.56e7cd3016979276fc77b474159b6c88.js",
     "service-worker.js": "/payment-tracker-frontend/service-worker.js",
     "static/css/2.15ad874f.chunk.css.map": "/payment-tracker-frontend/static/css/2.15ad874f.chunk.css.map",
-    "static/css/main.8288cd4d.chunk.css.map": "/payment-tracker-frontend/static/css/main.8288cd4d.chunk.css.map",
-    "static/js/2.8edf93ae.chunk.js.LICENSE.txt": "/payment-tracker-frontend/static/js/2.8edf93ae.chunk.js.LICENSE.txt"
+    "static/css/main.06f9695e.chunk.css.map": "/payment-tracker-frontend/static/css/main.06f9695e.chunk.css.map",
+    "static/js/2.8edf93ae.chunk.js.LICENSE.txt": "/payment-tracker-frontend/static/js/2.8edf93ae.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/payment-tracker-frontend/static/media/background.e2ff17b2.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.50cb428d.js",
     "static/css/2.15ad874f.chunk.css",
     "static/js/2.8edf93ae.chunk.js",
-    "static/css/main.8288cd4d.chunk.css",
+    "static/css/main.06f9695e.chunk.css",
     "static/js/main.0744d753.chunk.js"
   ]
 }

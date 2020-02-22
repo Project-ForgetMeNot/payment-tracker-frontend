@@ -18,68 +18,61 @@ class App extends React.Component {
         billProvider: "",
         emailAdd: ""
       },
-      sortOrder: null,
+      sortOrder: null
     }
   }
 
-
   componentDidMount() {
     axios.get("https://0w2rty5zca.execute-api.eu-west-1.amazonaws.com/dev/bills")
-      .then((response) => {
+    .then((response) => {
         const bills = response.data.bills;
 
         this.setState({
           billList: bills
-        })
-      })
-      .catch((err) => {
+        });
+    }).catch((err) => {
         console.log(err);
-      })
-  }
+    });
+  };
 
- 
   updateSortOrder = (ord) => {
     const order = ("asc", "desc");
     this.setState({
       sortOrder: order
-    })
-  }
+    });
+  };
 
 
   addNewBill = (category, date, name, email) => {
     const billList = this.state.billList;
 
     const newBill = {
-      billType: category,
+      billType: parseInt(category),
       renewalDate: date,
       billProvider: name,
       emailAdd: email,
       userId: this.getUserId()
-    }
+    };
 
     axios.post("https://0w2rty5zca.execute-api.eu-west-1.amazonaws.com/dev/bills", newBill)
-      .then((response) => {
-        const copyOfBills = billList;
-
-        newBill.billId = response.data.bill.billId;
-
-        copyOfBills.slice();
-        copyOfBills.push(newBill);
-        this.setState({
-          billList: copyOfBills
-        });
-        alertify.success('Bill added');
-
-        this.resetForm()
-      })
-      .catch((err) => {
-        console.log(err);
+    .then((response) => {
+      const copyOfBills = billList;
+      newBill.billId = response.data.bill.billId;
+      copyOfBills.slice();
+      copyOfBills.push(newBill);
+      this.setState({
+        billList: copyOfBills
       });
+        alertify.success('Bill added');
+        this.resetForm()
+    }).catch((err) => {
+      console.log(err);
+    });
   }
 
   resetForm = () => {
     const myForm = {
-      billType: "",
+      billType: null,
       renewalDate: "",
       billProvider: "",
       emailAdd: ""
@@ -89,17 +82,16 @@ class App extends React.Component {
     })
   }
 
-
   categories = (id) => {
     const cats = [
-      { id: 4, name: 'Insurance', icon: 'fas fa-car-crash' },
-      { id: 1, name: 'Car', icon: 'fas fa-car' },
-      { id: 2, name: 'Home', icon: 'fas fa-home' },
-      { id: 5, name: 'Phone', icon: 'fas fa-phone' },
-      { id: 6, name: 'Broadband', icon: 'fas fa-wifi' },
-      { id: 7, name: 'Others', icon: 'fa fa-search' }
+      { id: 1, name: 'Insurance', icon: 'fas fa-car-crash' },
+      { id: 2, name: 'Car', icon: 'fas fa-car' },
+      { id: 3, name: 'Home', icon: 'fas fa-home' },
+      { id: 4, name: 'Phone', icon: 'fas fa-phone' },
+      { id: 5, name: 'Broadband', icon: 'fas fa-wifi' },
+      { id: 6, name: 'Others', icon: 'fa fa-search' }
     ];
-
+  
     if (id) {
       let myCategory = {};
       cats.forEach((cat) => {
@@ -107,20 +99,18 @@ class App extends React.Component {
           myCategory = cat;
         }
       });
-
       return myCategory;
-
     } else {
-      return cats;
+    return cats;
     }
   }
+  
   deleteBill = (id) => {
     const myapp = this;
     alertify.confirm("Are you sure you want to delete this bill?", function () {
       myapp.deleteBillConfirm(id)
     });
   }
-
 
   deleteBillConfirm = (id) => {
     axios.delete(`https://0w2rty5zca.execute-api.eu-west-1.amazonaws.com/dev/bills/${id}`)
@@ -130,18 +120,18 @@ class App extends React.Component {
     this.setState({
       billList: filteredBills
     })
-    alertify.error('Task deleted with' + id);
+    alertify.error('Task deleted');
   }
-  getUserId = () => {
+    
+    getUserId = () => {
     return 1
-  }
-
+    }
 
   render() {
     const cats = this.categories();
     const myBillList = this.state.billList;
     const myFormFields = this.state.formFields;
-   
+
     if (this.state.sortOrder !== null) {
       myBillList.sort((bill1, bill2) => {
         if (this.state.sortOrder === "asc") {
@@ -152,17 +142,17 @@ class App extends React.Component {
             return 1;
           }
         } else if (this.state.sortOrder === "desc") {
-          if (bill1.renewalDate > bill2.renewalDate) {
-            return 1;
-          }
-          if (bill2.renewalDate > bill1.renewalDate) {
+          if (bill1.renewalDate < bill2.renewalDate) {
             return -1;
+          }
+          if (bill2.renewalDate < bill1.renewalDate) {
+            return 1;
           }
           return 0;
         }
       })
+      
     }
-
 
     return (
       <div className="App">

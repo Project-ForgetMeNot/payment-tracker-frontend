@@ -13,16 +13,6 @@ class AddNewBill extends React.Component {
         }
     }
 
-    UNSAFE_componentWillReceiveProps(props) {
-        this.setState({
-            billType: props.myFormFields.billType,
-            emailAdd: props.myFormFields.emailAdd,
-            billProvider: props.myFormFields.billProvider,
-            renewalDate: props.myFormFields.renewalDate,
-            categories: props.categories
-        });
-    }
-
     updateBillType = (event) => {
         this.setState({
             billType: event.target.value

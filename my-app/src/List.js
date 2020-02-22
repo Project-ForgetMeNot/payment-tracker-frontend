@@ -1,6 +1,7 @@
 import React from 'react';
 
 class List extends React.Component {
+    
     categories = (id) => {
         if (id) {
             return this.props.categoriesFunc(id);
@@ -58,7 +59,6 @@ class List extends React.Component {
                                 </tr>
                             })}
                         </tbody>
-
                     </table>
                 </div>
             </div>

@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/payment-tracker-frontend/precache-manifest.e4f6ec10cd92e1ac3a2219855550ff88.js"
+  "/payment-tracker-frontend/precache-manifest.3d8e3fab69eb8ab53846b68496169793.js"
 );
 
 self.addEventListener('message', (event) => {

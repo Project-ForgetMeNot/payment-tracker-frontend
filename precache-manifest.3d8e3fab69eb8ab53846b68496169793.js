@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "fec71909476dc655704c644b0c92de22",
+    "revision": "d7f3d052ecc382d29f44d0e37228d78c",
     "url": "/payment-tracker-frontend/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/payment-tracker-frontend/static/css/2.15ad874f.chunk.css"
   },
   {
-    "revision": "5e08271ecf84615713cd",
-    "url": "/payment-tracker-frontend/static/css/main.06f9695e.chunk.css"
+    "revision": "69f52968970812d302e6",
+    "url": "/payment-tracker-frontend/static/css/main.5c06c7ca.chunk.css"
   },
   {
     "revision": "b986931d6f93d3f09d54",
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/payment-tracker-frontend/static/js/2.de6a3300.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "5e08271ecf84615713cd",
-    "url": "/payment-tracker-frontend/static/js/main.831a140e.chunk.js"
+    "revision": "69f52968970812d302e6",
+    "url": "/payment-tracker-frontend/static/js/main.0c35a08f.chunk.js"
   },
   {
     "revision": "e561451ffac911d59257",

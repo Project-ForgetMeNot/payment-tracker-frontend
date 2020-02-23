@@ -32,7 +32,7 @@ class List extends React.Component {
                             <tr>
                                 <th scope="col">Bill Type</th>
                                 <th scope="col">Name of Bill Provider</th>
-                                <th scope="col">Renewal Date
+                                <th scope="col">Renewal Date 
                                     <button
                                         onClick={this.updateSortOrderAsc}>
                                         <i className="fas fa-sort-up"></i>
@@ -47,9 +47,8 @@ class List extends React.Component {
                         </thead>
                         <tbody>
                             {bills.map((bill, index) => {
-                                const thisCat = this.categories(bill.billType);
-
-                                return <tr key={index}>
+                                let thisCat = this.categories(bill.billType);
+                                return <tr key={`bill-${bill.billId}`}>
                                     <th scope="row">
                                         <i className={thisCat.icon}></i> {thisCat.name}
                                     </th>

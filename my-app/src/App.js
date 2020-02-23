@@ -58,11 +58,14 @@ class App extends React.Component {
         newBill.billId = response.data.bill.billId;
         copyOfBills.slice();
         copyOfBills.push(newBill);
+        
+        
         this.setState({
           billList: copyOfBills
         });
+        this.resetForm();
         alertify.success('Bill added');
-        this.resetForm()
+        
       }).catch((err) => {
         console.log({err:err});
         alertify.error(err.response.data.error);
@@ -70,15 +73,15 @@ class App extends React.Component {
   }
 
   resetForm = () => {
-    const myForm = {
-      billType: null,
+    this.setState({
+      formFields: {
+      billType: "",
       renewalDate: "",
       billProvider: "",
       emailAdd: ""
     }
-    this.setState({
-      formFields: myForm
-    })
+    });
+      document.getElementById("billForm").reset();
   }
 
   categories = (id) => {

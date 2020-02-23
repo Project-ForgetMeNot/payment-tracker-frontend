@@ -1,17 +1,6 @@
 import React from 'react';
 
 class AddNewBill extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            billType: props.myFormFields.billType,
-            emailAdd: props.myFormFields.emailAdd,
-            billProvider: props.myFormFields.billProvider,
-            renewalDate: props.myFormFields.renewalDate,
-            categories: props.categories
-        }
-    }
-
     updateBillType = (event) => {
         this.setState({
             billType: event.target.value
@@ -46,14 +35,14 @@ class AddNewBill extends React.Component {
     }
 
     render() {
-        const myForm = this.state;
-        const categoryList = this.state.categories;
+        const myForm = this.props;
+        const categoryList = myForm.categories;
         
         return (
             <div className="container">
                 <div className="AddForm card mb-5">
                     <div className="card-body">
-                        <form>
+                        <form id="billForm">
                             <div className="form-row">
                             <div className="form-group col-md-6">
                                     <label 

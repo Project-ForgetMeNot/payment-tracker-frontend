@@ -16,7 +16,9 @@ class CategoryButtons extends React.Component {
                 <div className="row">
                     <div className="col text-center">
                         {cats.map((value, index) => {
-                            return <button key={index} className="btn btn-info btn-circle btn-sm m-1" title={value.name}><i className={value.icon}></i></button>
+                            return <button key={index} className="btn btn-info btn-circle btn-sm m-1" title={value.name}>
+                                <i className={value.icon}></i>
+                                </button>
                         })}
                     </div>
                 </div>

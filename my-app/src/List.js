@@ -31,8 +31,9 @@ class List extends React.Component {
                         <thead>
                             <tr>
                                 <th scope="col">Bill Type</th>
-                                <th scope="col">Name of Bill Provider</th>
-                                <th scope="col">Renewal Date 
+                                <th scope="col">Provider</th>
+                                <th scope="col">Renewal
+                                <div className="float-right">
                                     <button
                                         onClick={this.updateSortOrderAsc}>
                                         <i className="fas fa-sort-up"></i>
@@ -41,6 +42,7 @@ class List extends React.Component {
                                         onClick={this.updateSortOrderDesc}>
                                         <i className="fas fa-sort-down"></i>
                                     </button>
+                                </div>
                                 </th>
                                 <th scope="col">Delete</th>
                             </tr>
